@@ -4,7 +4,7 @@ services:
         image: public.ecr.aws/zinclabs/zincsearch:latest
         container_name: zinc_search
         ports:
-            - 4080:9200
+            - 4080:4080
         environment:
             - ZINC_DATA_PATH=/data
             - ZINC_FIRST_ADMIN_USER=admin
