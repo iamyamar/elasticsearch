@@ -15,8 +15,8 @@ services:
             - elastic
 
 volumes:
-    zinc-data:
-        driver: local
+    # zinc-data:
+    #     driver: local
 
 networks:
     elastic:
