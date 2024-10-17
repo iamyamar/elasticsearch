@@ -16,7 +16,7 @@ services:
         environment:
             - GF_SECURITY_ADMIN_PASSWORD=admin
         ports:
-            - 3000:3000
+            - 3200:3200
         networks:
             - elastic
         depends_on:
