@@ -10,13 +10,14 @@ services:
             - ZINC_FIRST_ADMIN_USER=admin
             - ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123
         volumes:
-            - ./data:/data
+            - zinc-data:/data
+        user: '1000:1000' # Run as a non-root user with UID:GID (adjust to your needs)
         networks:
             - elastic
 
-# volumes:
-# zinc-data:
-#     driver: local
+volumes:
+    zinc-data:
+        driver: local
 
 networks:
     elastic:
