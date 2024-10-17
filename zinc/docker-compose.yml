@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+    zinc_search:
+        image: public.ecr.aws/zinclabs/zincsearch:latest
+        container_name: zinc_search
+        ports:
+            - 4080:4080
+        environment:
+            - ZINC_DATA_PATH=/data
+            - ZINC_FIRST_ADMIN_USER=admin
+            - ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123
+        volumes:
+            - ./data:/data
+        networks:
+            - elastic
+
+volumes:
+    zinc-data:
+        driver: local
+
+networks:
+    elastic:
+        driver: bridge
